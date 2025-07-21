@@ -1,1 +1,1 @@
-Here is my personal resume!
+Hi, here is my personal resume :)
