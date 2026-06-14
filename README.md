@@ -1,1 +1,1 @@
-Attached is my personal resume :)
+Attached are my personal resumes in EN&CN language versions :)
