@@ -13,172 +13,105 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            background: #f5f5f5;
+            height: 100vh;
+            overflow: hidden;
         }
         
-        .container {
+        .top-bar {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 900px;
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.95;
-            margin-bottom: 20px;
-        }
-        
-        .content {
-            padding: 60px 40px;
-            text-align: center;
-        }
-        
-        .resume-section {
-            margin-bottom: 40px;
-        }
-        
-        .resume-section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-        
-        .pdf-viewer {
-            border: 2px solid #667eea;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            background: #f8f9fa;
-        }
-        
-        .pdf-viewer iframe {
-            width: 100%;
-            height: 800px;
-            border: none;
-        }
-        
-        .button-group {
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
         }
         
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 6px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: none;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1em;
-            transition: all 0.3s ease;
             cursor: pointer;
-            border: none;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
         }
         
-        .btn-primary {
+        .btn-download {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
         
-        .btn-primary:hover {
+        .btn-download:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
         
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
+        .btn-link {
+            background: #f0f0f0;
+            color: #333;
+            text-decoration: none;
         }
         
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
+        .btn-link:hover {
+            background: #e0e0e0;
         }
         
-        .footer {
-            background: #f8f9fa;
-            padding: 30px;
-            text-align: center;
-            color: #666;
-            border-top: 1px solid #e0e0e0;
+        .pdf-container {
+            width: 100%;
+            height: calc(100vh - 60px);
+            overflow: auto;
+        }
+        
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         
         @media (max-width: 768px) {
-            .header {
-                padding: 40px 20px;
-            }
-            
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .content {
-                padding: 30px 20px;
-            }
-            
-            .pdf-viewer iframe {
-                height: 600px;
-            }
-            
-            .button-group {
+            .top-bar {
                 flex-direction: column;
+                gap: 10px;
+            }
+            
+            .controls {
+                width: 100%;
+                justify-content: center;
             }
             
             .btn {
-                width: 100%;
+                flex: 1;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Iris Yan</h1>
-            <p>Product Designer | TikTok</p>
+    <div class="top-bar">
+        <div class="title">Iris Yan - Resume (Product Designer, TikTok)</div>
+        <div class="controls">
+            <a href="https://raw.githubusercontent.com/IrisYan21/file/main/Iris%20Yan_Resume.pdf" download class="btn btn-download">📥 Download PDF</a>
+            <a href="https://www.linkedin.com/in/iris-yan-845534210" target="_blank" class="btn btn-link">LinkedIn</a>
+            <a href="https://www.danchangyan.com" target="_blank" class="btn btn-link">Portfolio</a>
         </div>
-        
-        <div class="content">
-            <div class="resume-section">
-                <h2>My Resume</h2>
-                <div class="pdf-viewer">
-                    <iframe src="https://github.com/IrisYan21/file/blob/main/Iris%20Yan_Resume.pdf"></iframe>
-                </div>
-            </div>
-            
-            <div class="button-group">
-                <a href="https://github.com/IrisYan21/file/raw/main/Iris%20Yan_Resume.pdf" class="btn btn-primary" download>Download PDF</a>
-                <a href="https://www.linkedin.com/in/iris-yan-845534210" class="btn btn-secondary" target="_blank">LinkedIn Profile</a>
-                <a href="https://www.danchangyan.com" class="btn btn-secondary" target="_blank">Portfolio</a>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>&copy; 2024 Iris Yan. All rights reserved.</p>
-        </div>
+    </div>
+    
+    <div class="pdf-container">
+        <iframe src="https://raw.githubusercontent.com/IrisYan21/file/main/Iris%20Yan_Resume.pdf"></iframe>
     </div>
 </body>
 </html>
